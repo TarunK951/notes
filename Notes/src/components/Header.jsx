@@ -32,6 +32,10 @@ function Header() {
             <p>tags</p>
             <p>tags</p>
             <p>tags</p>
+            <p>tags</p>
+            <p>tags</p>
+            <p>tags</p>
+            <p>done</p>
           </div>
         </div>
       </div>
