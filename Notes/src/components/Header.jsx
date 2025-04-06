@@ -32,8 +32,6 @@ function Header() {
             <p>tags</p>
             <p>tags</p>
             <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
           </div>
         </div>
       </div>
