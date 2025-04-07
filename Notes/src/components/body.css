@@ -1,2 +1,39 @@
 .bodyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+
+  .Create-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button {
+      background-color: blue;
+      color: white;
+      width: 100%;
+      padding: 10px;
+
+      .cp {
+        font: 500;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .list-data {
+    .data {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .note {
+        background-color: rgba(128, 128, 128, 0.5);
+        border-radius: 5px;
+        padding: 8px;
+      }
+    }
+  }
 }

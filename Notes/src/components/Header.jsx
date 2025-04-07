@@ -14,17 +14,17 @@ function Header() {
             src="https://img.icons8.com/?size=100&id=kgTtmFTRbaRx&format=png&color=000000"
             alt=""
           />
-          <p>Notes</p>
+          <p className="notesLogo">Notes</p>
         </div>
         <div className="head-content">
           <div className="head-main">
             <div className="containers">
               <IoHome size={18} />
-              <p>All Notes</p>
+              <p className="allNotes">All Notes</p>
             </div>
             <div className="containers">
               <PiArchiveDuotone size={18} />
-              <p>Archived Notes</p>
+              <p className="allNotes">Archived Notes</p>
             </div>
           </div>
           <hr />

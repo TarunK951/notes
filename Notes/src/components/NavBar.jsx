@@ -8,9 +8,9 @@ function NavBar() {
       <div className="nav">
         <p>All Notes</p>
         <div className="search">
-          <input type="text" />
+          <input type="text" placeholder="Search by title, or tags...." />
           <button className="settings">
-            <CiSettings size={25} />
+            <CiSettings size={40} />
           </button>
         </div>
       </div>

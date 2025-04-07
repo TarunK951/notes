@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./App.css";
 import Body from "./components/Body";
 import Body2 from "./components/Body2";
@@ -6,6 +7,19 @@ import Header from "./components/header";
 import NavBar from "./components/NavBar";
 
 function App() {
+  const [notes, setNotes] = useState([
+    {
+      name: "hello",
+      age: "25",
+      place: "hyd",
+    },
+    {
+      name: "hello",
+      age: "25",
+      place: "hyd",
+    },
+  ]);
+
   return (
     <>
       <div className="App">
@@ -17,7 +31,7 @@ function App() {
           <NavBar />
           <div className="body">
             <div className="body1">
-              <Body />
+              <Body notes={notes} setNotes={setNotes} />
             </div>
             <div className="body2">
               <Body2 />
