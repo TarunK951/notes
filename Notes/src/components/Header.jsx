@@ -1,5 +1,8 @@
 import React from "react";
-import "./all.css";
+import { FaTag } from "react-icons/fa6";
+import { IoHome } from "react-icons/io5";
+import { PiArchiveDuotone } from "react-icons/pi";
+import "./head.css";
 
 function Header() {
   return (
@@ -14,28 +17,25 @@ function Header() {
           <p>Notes</p>
         </div>
         <div className="head-content">
-          <div className="main">
+          <div className="head-main">
             <div className="containers">
-              <img src="" alt="" />
+              <IoHome size={18} />
               <p>All Notes</p>
             </div>
             <div className="containers">
-              <img src="" alt="" />
+              <PiArchiveDuotone size={18} />
               <p>Archived Notes</p>
             </div>
           </div>
-          <div className="tags">
-            <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
-            <p>tags</p>
-            <p>done</p>
+          <hr />
+          <div className="tags-container">
+            <p className="tag-title">Tags</p>
+            <div className="tags">
+              <div className="tag">
+                <FaTag />
+                <p>Work</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
