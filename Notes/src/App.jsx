@@ -18,6 +18,11 @@ function App() {
       age: "25",
       place: "hyd",
     },
+    {
+      name: "hello ther is something to do lorem oookokokokoooooooooooooo ",
+      age: "25",
+      place: "hyd",
+    },
   ]);
 
   return (
@@ -34,7 +39,7 @@ function App() {
               <Body notes={notes} setNotes={setNotes} />
             </div>
             <div className="body2">
-              <Body2 />
+              <Body2 notes={notes} setNotes={setNotes} />
             </div>
             <div className="body3">
               <Body3 />

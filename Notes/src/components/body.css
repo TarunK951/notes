@@ -12,6 +12,8 @@
 
     button {
       background-color: blue;
+      border-radius: 6px;
+      border: none;
       color: white;
       width: 100%;
       padding: 10px;
@@ -32,7 +34,16 @@
       .note {
         background-color: rgba(128, 128, 128, 0.5);
         border-radius: 5px;
-        padding: 8px;
+        padding: 5px;
+
+        .note-title {
+          font-size: 20px;
+          font-weight: 500;
+        }
+        .note-content {
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.5);
+        }
       }
     }
   }

@@ -32,7 +32,7 @@
   width: 100%;
 
   .body1 {
-    width: 30%;
+    width: 25%;
     border-right: 1px solid grey;
     min-height: 95vh;
     padding-right: 10px;
@@ -40,7 +40,7 @@
   }
 
   .body2 {
-    min-width: 50%;
+    min-width: 55%;
     border-right: 1px solid grey;
     min-height: 95vh;
     padding-inline: 10px;
