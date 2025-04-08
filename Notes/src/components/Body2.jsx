@@ -1,12 +1,18 @@
 import React from "react";
+import "./body2.css";
 
 function Body2({ display }) {
+  if (!display) {
+    return <div>No item selected</div>;
+  }
+
   return (
     <div>
-      <div className="body2-container">
-        <div className="input">
-          <h2>{display.name}</h2>
-        </div>
+      <div className="display">
+        <p className="display-title"> {display.name}</p>
+        <p className="display-tags"> {display.age}</p>
+        <p className="display-content"> {display.place}</p>
+        <p className="display-mesg"> {display.mesg}</p>
       </div>
     </div>
   );

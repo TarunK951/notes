@@ -1,0 +1,45 @@
+/*  */
+
+.display {
+  background-color: rgba(168, 165, 165, 0.435);
+  border-radius: 6px;
+  min-height: 60vh;
+  padding-top: 15px;
+
+  .display-title {
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+    font-size: 35px;
+    background-color: rgba(128, 128, 128, 0.519);
+    margin: 15px;
+    border-radius: 6px;
+  }
+
+  .display-tags {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 15px;
+    font-size: 25px;
+    background-color: rgba(128, 128, 128, 0.519);
+    margin: 15px;
+    border-radius: 6px;
+  }
+
+  .display-content {
+    padding: 15px;
+    font-size: 25px;
+    background-color: rgba(128, 128, 128, 0.519);
+    margin: 15px;
+    border-radius: 6px;
+  }
+
+  .display-mesg {
+    display: flex;
+    padding: 16px;
+    font-size: 20px;
+    background-color: rgba(128, 128, 128, 0.519);
+    margin: 15px;
+  }
+}

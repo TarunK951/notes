@@ -11,20 +11,23 @@ function App() {
     {
       id: 1,
       name: "hello",
-      age: "25",
+      age: "21",
       place: "hyd",
+      mesg: "what all the content you wawnt to write and tell can be pasted here and will be sent in to this",
     },
     {
       id: 2,
-      name: "hello...",
-      age: "25",
-      place: "hyd",
+      name: "jii...",
+      age: "22",
+      place: "amp",
+      mesg: "what all the content you wawnt to write and tell can be pasted here and will be sent in to this",
     },
     {
       id: 3,
-      name: "hello ther is something to do lorem oookokokokoooooooooooooo ",
+      name: "hello ther is something to do lorem  ",
       age: "25",
       place: "hyd",
+      mesg: "what all the content you wawnt to write and tell can be pasted here and will be sent in to this",
     },
   ]);
 
