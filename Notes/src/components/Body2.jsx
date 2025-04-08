@@ -1,19 +1,11 @@
 import React from "react";
 
-function Body2(props) {
+function Body2({ display }) {
   return (
     <div>
       <div className="body2-container">
         <div className="input">
-          {props.notes.map((note) => {
-            return (
-              <div className="Details" key={note.name}>
-                <p className="Details-title">{note.name}</p>
-                <p className="Details-tags">{note.age}</p>
-                <p className="Details-date">{note.place}</p>
-              </div>
-            );
-          })}
+          <h2>{display.name}</h2>
         </div>
       </div>
     </div>

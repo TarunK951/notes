@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "./body.css";
 import Input from "./input";
 
-function Body(props) {
+function Body({ setDisplay, notes }) {
   const [open, setOpen] = useState(false);
+  // const [show, setShow] = useState();
 
   return (
     <div>
@@ -29,9 +30,15 @@ function Body(props) {
 
         <div className="list-data">
           <div className="data">
-            {props.notes.map((note) => {
+            {notes.map((note) => {
               return (
-                <div className="note" key={note.name}>
+                <div
+                  className="note"
+                  key={note.id}
+                  onClick={() => {
+                    setDisplay(note), console.log(note);
+                  }}
+                >
                   <p className="note-title">{note.name}</p>
                   <p className="note-tags">{note.age}</p>
                   <p className="note-date">{note.place}</p>
