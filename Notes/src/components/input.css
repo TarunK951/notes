@@ -4,6 +4,7 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
 .inputPopUp {
@@ -24,10 +25,10 @@ body {
 .popUp {
   background-color: #ffffff;
   border-radius: 12px;
-  padding: 40px;
+  padding: 30px;
   width: 450px;
   position: relative;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .closeBtn {
@@ -62,12 +63,26 @@ body {
   color: #333;
 }
 
-.inputs input {
+.inputs input,
+.inputs textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 15px;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.inputs input:focus,
+.inputs textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.inputs textarea {
+  height: 150px;
+  resize: vertical;
 }
 
 .submitBtn {
@@ -80,9 +95,43 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
-  margin: 20px auto 0; /* Centering the button */
+  margin: 20px auto 0;
 }
 
 .submitBtn:hover {
   background-color: #45a049;
+}
+
+.tag-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-content: center;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.btn-tag {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btn-tag:hover {
+  background-color: rgba(149, 195, 132, 0.763);
+  color: #000000;
+  border-color: rgba(149, 195, 132, 0.763);
+}
+
+.btn-tag.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
 }

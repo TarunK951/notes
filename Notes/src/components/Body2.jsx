@@ -10,7 +10,7 @@ function Body2({ display }) {
     <div>
       <div className="display">
         <p className="display-title"> {display.name}</p>
-        <p className="display-tags"> {display.age}</p>
+        <p className="display-tags"> {display.tags.join(", ")}</p>
         <p className="display-content"> {display.place}</p>
         <p className="display-mesg"> {display.mesg}</p>
       </div>

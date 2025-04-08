@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./body.css";
 import Input from "./input";
 
-function Body({ setDisplay, notes, setNotes }) {
+function Body({ setDisplay, notes, setNotes, setSelect, select }) {
   const [open, setOpen] = useState(false);
   // const [show, setShow] = useState();
 
@@ -28,6 +28,8 @@ function Body({ setDisplay, notes, setNotes }) {
                 setOpen={setOpen}
                 setNotes={setNotes}
                 notes={notes}
+                setSelect={setSelect}
+                select={select}
               />
             </div>
           </div>

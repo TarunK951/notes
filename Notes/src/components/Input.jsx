@@ -1,29 +1,47 @@
 import React, { useState } from "react";
+import { FaTags } from "react-icons/fa6";
 import "./input.css";
 
-function Input({ setOpen, notes, setNotes }) {
+function Input({ setOpen, notes, setNotes, select, setSelect }) {
   //
   const [title, setTitle] = useState("");
-  const [tags, setTags] = useState("");
+  const [tags, setTags] = useState([]);
   const [place, setPlace] = useState("");
   const [mesg, setMesg] = useState("");
+  const [activeTags, setActiveTags] = useState([]);
   //
   const add = () => {
     setNotes([
       ...notes,
       {
         id: notes.length + 1,
-        name: title,
-        age: tags,
-        place: place,
-        mesg: mesg,
+        tags: tags.length === 0 ? "nothing selected" : tags,
+        name: title === "" ? "empty" : title,
+        place: place === "" ? "empty" : place,
+        mesg: mesg === "" ? "nothing written" : mesg,
       },
     ]);
     setOpen(!open);
-    setTags("");
+    setTags([]);
     setPlace("");
     setTitle("");
     setMesg("");
+  };
+  //
+  const tagged = (tag) => {
+    setTags((prevTags) => {
+      if (activeTags.includes(tag)) {
+        setActiveTags(activeTags.filter((t) => t !== tag)); // remove if already active
+      } else {
+        setActiveTags([...activeTags, tag]); // add if not active
+      }
+
+      if (prevTags.includes(tag)) {
+        return prevTags.filter((t) => t !== tag);
+      } else {
+        return [...prevTags, tag];
+      }
+    });
   };
   //
   return (
@@ -51,12 +69,72 @@ function Input({ setOpen, notes, setNotes }) {
           </div>
           <div>
             <h2>Select Tags</h2>
-            <input
-              type="text"
-              placeholder="Tags"
-              value={tags}
-              onChange={(e) => setTags(e.target.value)}
-            />
+            <div className="tag-buttons">
+              <button
+                className={`btn-tag ${
+                  activeTags.includes("work") ? "active" : ""
+                }`}
+                onClick={() => tagged("work")}
+              >
+                <FaTags /> Work
+              </button>
+              <button
+                className={`btn-tag ${
+                  activeTags.includes("food") ? "active" : ""
+                }`}
+                onClick={() => tagged("food")}
+              >
+                <FaTags /> Food
+              </button>
+              <button
+                className={`btn-tag ${
+                  activeTags.includes("sport") ? "active" : ""
+                }`}
+                onClick={() => tagged("sport")}
+              >
+                <FaTags /> Sport
+              </button>
+              <button
+                className={`btn-tag ${
+                  activeTags.includes("health") ? "active" : ""
+                }`}
+                onClick={() => tagged("health")}
+              >
+                <FaTags /> Health
+              </button>
+              <button
+                className={`btn-tag ${
+                  activeTags.includes("personal") ? "active" : ""
+                }`}
+                onClick={() => tagged("personal")}
+              >
+                <FaTags /> Personal
+              </button>
+              <button
+                className={`btn-tag ${
+                  activeTags.includes("travel") ? "active" : ""
+                }`}
+                onClick={() => tagged("travel")}
+              >
+                <FaTags /> Travel
+              </button>
+              <button
+                className={`btn-tag ${
+                  activeTags.includes("recipes") ? "active" : ""
+                }`}
+                onClick={() => tagged("recipes")}
+              >
+                <FaTags /> Recipes
+              </button>
+              <button
+                className={`btn-tag ${
+                  activeTags.includes("dev") ? "active" : ""
+                }`}
+                onClick={() => tagged("dev")}
+              >
+                <FaTags /> Dev
+              </button>
+            </div>
           </div>
           <div>
             <h2>place</h2>
@@ -69,7 +147,7 @@ function Input({ setOpen, notes, setNotes }) {
           </div>
           <div>
             <h2>mesg</h2>
-            <input
+            <textarea
               type="text"
               placeholder="Note"
               value={mesg}

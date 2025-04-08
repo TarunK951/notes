@@ -7,29 +7,9 @@ import Header from "./components/header";
 import NavBar from "./components/NavBar";
 
 function App() {
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      name: "hello",
-      age: "21",
-      place: "hyd",
-      mesg: "what all the content you wawnt to write and tell can be pasted here and will be sent in to this",
-    },
-    {
-      id: 2,
-      name: "jii...",
-      age: "22",
-      place: "amp",
-      mesg: "what all the content you wawnt to write and tell can be pasted here and will be sent in to this",
-    },
-    {
-      id: 3,
-      name: "hello ther is something to do lorem  ",
-      age: "25",
-      place: "hyd",
-      mesg: "what all the content you wawnt to write and tell can be pasted here and will be sent in to this",
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
+
+  const [select, setSelect] = useState([]);
 
   const [display, setDisplay] = useState(null);
 
@@ -49,10 +29,18 @@ function App() {
                 setNotes={setNotes}
                 display={display}
                 setDisplay={setDisplay}
+                select={select}
+                setSelect={setSelect}
               />
             </div>
             <div className="body2">
-              <Body2 notes={notes} setNotes={setNotes} display={display} />
+              <Body2
+                note={notes}
+                setNotes={setNotes}
+                display={display}
+                select={select}
+                setSelect={setSelect}
+              />
             </div>
             <div className="body3">
               <Body3 />
