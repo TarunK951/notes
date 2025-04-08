@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./body.css";
 import Input from "./input";
 
-function Body({ setDisplay, notes }) {
+function Body({ setDisplay, notes, setNotes }) {
   const [open, setOpen] = useState(false);
   // const [show, setShow] = useState();
 
@@ -23,7 +23,12 @@ function Body({ setDisplay, notes }) {
         {open && (
           <div className="inputPopUp">
             <div className="popUp">
-              <Input open={open} setOpen={setOpen} />
+              <Input
+                open={open}
+                setOpen={setOpen}
+                setNotes={setNotes}
+                notes={notes}
+              />
             </div>
           </div>
         )}

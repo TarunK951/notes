@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./input.css";
 
-function Input(props) {
+function Input({ setOpen, notes, setNotes }) {
+  //
+  const [title, setTitle] = useState("");
+  const [tags, setTags] = useState("");
+  const [place, setPlace] = useState("");
+  const [mesg, setMesg] = useState("");
+  //
+  const add = () => {
+    setNotes([
+      ...notes,
+      {
+        id: notes.length + 1,
+        name: title,
+        age: tags,
+        place: place,
+        mesg: mesg,
+      },
+    ]);
+    setOpen(!open);
+    setTags("");
+    setPlace("");
+    setTitle("");
+    setMesg("");
+  };
+  //
   return (
     <div className="inputPopUp">
       <div className="popUp">
@@ -9,7 +33,7 @@ function Input(props) {
         <button
           className="closeBtn"
           onClick={() => {
-            props.setOpen(!open);
+            setOpen(!open);
           }}
         >
           &times;
@@ -18,24 +42,43 @@ function Input(props) {
         <div className="inputs">
           <div>
             <h2>Enter Title</h2>
-            <input type="text" placeholder="Title" />
+            <input
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
           </div>
           <div>
             <h2>Select Tags</h2>
-            <input type="text" placeholder="Tags" />
+            <input
+              type="text"
+              placeholder="Tags"
+              value={tags}
+              onChange={(e) => setTags(e.target.value)}
+            />
           </div>
           <div>
-            <h2>Note Here</h2>
-            <input type="text" placeholder="Note" />
+            <h2>place</h2>
+            <input
+              type="text"
+              placeholder="Note"
+              value={place}
+              onChange={(e) => setPlace(e.target.value)}
+            />
+          </div>
+          <div>
+            <h2>mesg</h2>
+            <input
+              type="text"
+              placeholder="Note"
+              value={mesg}
+              onChange={(e) => setMesg(e.target.value)}
+            />
           </div>
 
           {/* Submit Button */}
-          <button
-            className="submitBtn"
-            onClick={() => {
-              props.setOpen(!open);
-            }}
-          >
+          <button className="submitBtn" onClick={add}>
             Submit
           </button>
         </div>
