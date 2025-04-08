@@ -6,6 +6,8 @@
 }
 
 .App {
+  background-color: #ffffff;
+  color: black;
   font-family: "Prompt", sans-serif;
   display: flex;
   width: 100%;
@@ -21,34 +23,28 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-right: 20px;
 }
 
 .body {
   display: flex;
-  padding-inline: 10px;
+
   gap: 20px;
-  padding-top: 20px;
   width: 100%;
 
   .body1 {
     width: 25%;
     border-right: 1px solid grey;
     min-height: 95vh;
-    padding-right: 10px;
-    padding-left: 5px;
   }
 
   .body2 {
     min-width: 55%;
     border-right: 1px solid grey;
     min-height: 95vh;
-    padding-inline: 10px;
   }
 
   .body3 {
     width: 20%;
     min-height: 95vh;
-    padding-inline: 10px;
   }
 }

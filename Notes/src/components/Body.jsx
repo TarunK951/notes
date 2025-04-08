@@ -47,7 +47,6 @@ function Body({ setDisplay, notes, setNotes, setSelect, select }) {
                   }}
                 >
                   <p className="note-title">{note.name}</p>
-                  <p className="note-tags">{note.age}</p>
                   <p className="note-date">{note.place}</p>
                 </div>
               );

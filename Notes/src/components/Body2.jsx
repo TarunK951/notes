@@ -7,12 +7,29 @@ function Body2({ display }) {
   }
 
   return (
-    <div>
-      <div className="display">
-        <p className="display-title"> {display.name}</p>
-        <p className="display-tags"> {display.tags.join(", ")}</p>
-        <p className="display-content"> {display.place}</p>
-        <p className="display-mesg"> {display.mesg}</p>
+    <div className="display">
+      <div className="display-section">
+        <span className="displayLabel">Title:</span>
+        <div className="DisplayContent">{display.name}</div>
+      </div>
+
+      <div className="display-section">
+        <span className="displayLabel">Tags:</span>
+        <div className="display-tags">
+          {display.tags.map((tag, index) => (
+            <span key={index}>{tag}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className="display-section">
+        <span className="displayLabel">Place:</span>
+        <div className="display-content-text">{display.place}</div>
+      </div>
+
+      <div className="display-section">
+        <span className="displayLabel">Message:</span>
+        <div className="display-mesg-text">{display.mesg}</div>
       </div>
     </div>
   );

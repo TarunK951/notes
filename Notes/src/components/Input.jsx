@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaTags } from "react-icons/fa6";
 import "./input.css";
 
-function Input({ setOpen, notes, setNotes, select, setSelect }) {
+function Input({ setOpen, notes, setNotes }) {
   //
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState([]);
@@ -15,7 +15,7 @@ function Input({ setOpen, notes, setNotes, select, setSelect }) {
       ...notes,
       {
         id: notes.length + 1,
-        tags: tags.length === 0 ? "nothing selected" : tags,
+        tags: Array.isArray(tags) ? tags : [],
         name: title === "" ? "empty" : title,
         place: place === "" ? "empty" : place,
         mesg: mesg === "" ? "nothing written" : mesg,
