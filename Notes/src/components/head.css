@@ -8,11 +8,12 @@
   height: 100vh;
   padding: 15px;
   padding-left: 20px;
-  border: 0.5px solid grey;
+  border: 0.5px solid var(--border-primary);
   border-bottom: none;
 
   .notesLogo {
     font-size: 35px;
+    color: var(--text-primary);
   }
 
   .header-logo-container {
@@ -21,57 +22,59 @@
     align-items: center;
     gap: 10px;
     padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid grey;
-  }
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-primary);
 
-  .header-logo-container:hover {
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-}
-
-.header-logo {
-  display: flex;
-  gap: 10px;
-  font-size: 25px;
-  font-weight: 700;
-  /* padding-top: 20px; */
-  align-items: center;
-
-  img {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-.head-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-family: "Prompt", sans-serif;
-
-  .head-main {
-    font-size: 15px;
-    display: flex;
-
-    flex-direction: column;
-    gap: 10px;
-
-    .containers {
-      display: flex;
-
-      .allNotes {
-        font-size: 25px;
-      }
+    &:hover {
+      cursor: pointer;
+      background-color: var(--header-hover-background);
+      border-radius: 10px;
     }
   }
 
-  .containers {
+  .header-logo {
     display: flex;
     gap: 10px;
+    font-size: 25px;
+    font-weight: 700;
     align-items: center;
+    color: var(--text-primary);
+
+    img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .head-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Prompt", sans-serif;
+
+    .head-main {
+      font-size: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .containers {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background-color: transparent;
+        width: 100%;
+        border-radius: 5px;
+        padding: 8px;
+        border: none;
+        color: var(--text-primary);
+
+        .allNotes {
+          font-size: 18px;
+          color: var(--text-primary);
+        }
+      }
+    }
   }
 }
 
@@ -79,16 +82,26 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+
   .tag-title {
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--tag-title-color);
   }
 
   .tags {
     padding-left: 10px;
+
     .tag {
       display: flex;
       align-items: center;
       gap: 5px;
+      color: var(--text-primary);
     }
+  }
+}
+
+/* Separated Hover Effect */
+.header .head-content .head-main .containers {
+  &:hover {
+    background-color: var(--container-hover-background);
   }
 }

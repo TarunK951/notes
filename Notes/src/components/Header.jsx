@@ -18,13 +18,17 @@ function Header() {
         </div>
         <div className="head-content">
           <div className="head-main">
-            <div className="containers">
-              <IoHome size={18} />
-              <p className="allNotes">All Notes</p>
+            <div>
+              <button className="containers">
+                <IoHome size={25} />
+                <p className="allNotes">All Notes</p>
+              </button>
             </div>
-            <div className="containers">
-              <PiArchiveDuotone size={18} />
-              <p className="allNotes">Archived Notes</p>
+            <div>
+              <button className="containers">
+                <PiArchiveDuotone size={25} />
+                <p className="allNotes">Archived Notes</p>
+              </button>
             </div>
           </div>
           <hr />

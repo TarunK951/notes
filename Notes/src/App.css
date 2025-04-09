@@ -1,13 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+:root {
+  --background-color: white;
+  --text-color: black;
+  --header-border-color: grey;
+  --header-hover-background: rgba(0, 0, 0, 0.1);
+  --container-hover-background: rgba(188, 184, 184, 0.591);
+  --tag-title-color: rgba(0, 0, 0, 0.5);
+  --button-border-color: rgba(128, 128, 128, 0.519);
+}
+
 * {
   padding: 0;
   margin: 0;
+  overflow-y: hidden;
 }
 
 .App {
-  background-color: #ffffff;
-  color: black;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: "Prompt", sans-serif;
   display: flex;
   width: 100%;
@@ -27,7 +39,6 @@
 
 .body {
   display: flex;
-
   gap: 20px;
   width: 100%;
 
@@ -47,4 +58,18 @@
     width: 20%;
     min-height: 95vh;
   }
+}
+
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --header-border-color: #555;
+  --header-hover-background: rgba(255, 255, 255, 0.1);
+  --container-hover-background: rgba(80, 80, 80, 0.591);
+  --tag-title-color: rgba(255, 255, 255, 0.5);
+  --button-border-color: rgba(200, 200, 200, 0.519);
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --button-background: #28a745;
+  --button-text: rgb(237, 230, 230);
 }

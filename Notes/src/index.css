@@ -1,0 +1,80 @@
+:root {
+  /* General Text Colors */
+  --text-primary: black; /* Main text color */
+  --text-secondary: #555; /* Secondary text, labels, etc. */
+  --text-light: #cccccc; /* Lighter text for dark mode */
+
+  /* Background Colors */
+  --bg-primary: white; /* Main background */
+  --bg-secondary: #f0f0f0; /* Secondary backgrounds (e.g., input fields, content areas) */
+  --bg-dark: #333; /* Darker backgrounds for dark mode */
+  --bg-light: #f9f9f9; /* Light background for enhanced light mode */
+  --bg-darker: #1e1e1e; /* Even darker background */
+  --bg-darker-popup: #2a2a2a; /* Darker popup background */
+
+  /* Border Colors */
+  --border-primary: #ccc; /* Main border color */
+  --border-secondary: #ddd; /* Secondary borders */
+  --border-dark: #444; /* Dark mode borders */
+
+  /* Button Colors */
+  --button-primary: #4caf50; /* Main button background */
+  --button-primary-text: white; /* Main button text color */
+  --button-primary-hover: #45a049; /* Main button hover background */
+  --button-secondary: #e6e6e6; /* Secondary buttons or tags */
+  --button-secondary-text: black;
+  --button-secondary-hover: rgba(149, 195, 132, 0.763);
+  --button-active: #6699cc; /* Active button or tag */
+  --button-active-text: white;
+
+  /* Other Colors */
+  --close-button-background: #f44336;
+  --close-button-text: white;
+  --close-button-hover-background: #e53935;
+  --header-hover-background: rgba(0, 0, 0, 0.1);
+  --container-hover-background: rgba(188, 184, 184, 0.591);
+  --tag-title-color: rgba(0, 0, 0, 0.5);
+  --submit-button-background: #007bff;
+  --submit-button-text: white;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode {
+  --text-primary: var(--text-light);
+  --text-secondary: #b3b3b3;
+  --bg-primary: var(--bg-darker);
+  --bg-secondary: var(--bg-dark);
+  --border-primary: var(--border-dark);
+  --border-secondary: var(--border-dark);
+  --button-secondary: var(--bg-dark);
+  --button-secondary-text: var(--text-light);
+  --button-secondary-hover: rgba(102, 153, 204, 0.763);
+  --close-button-background: #e53935;
+  --close-button-hover-background: #f44336;
+  --header-hover-background: rgba(255, 255, 255, 0.1);
+  --container-hover-background: rgba(80, 80, 80, 0.591);
+  --tag-title-color: rgba(255, 255, 255, 0.5);
+  --submit-button-background: #33aaff;
+  --submit-button-text: black;
+  --bg-darker-popup: var(--bg-dark);
+}
+
+/* Enhanced Light Mode */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+:root {
+  --bg-primary: white;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --bg-secondary: #f0f0f0;
+  --button-secondary: #e6e6e6;
+  --button-secondary-text: #444;
+}

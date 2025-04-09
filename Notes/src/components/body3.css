@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 20px;
 
   .body3-button {
     display: flex;
@@ -9,11 +12,16 @@
     align-items: center;
     gap: 10px;
     font-size: 20px;
-  }
-
-  button {
+    color: var(--text-primary);
     background: none;
     padding: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.519);
+    border: 1px solid var(--border-primary);
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
+}
+
+/* Separated Hover Effects */
+.body3-container .body3-button:hover {
+  background-color: var(--container-hover-background);
+  transform: scale(1.05);
 }

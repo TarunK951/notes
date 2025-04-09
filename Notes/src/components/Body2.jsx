@@ -1,9 +1,17 @@
 import React from "react";
+import { ImFilesEmpty } from "react-icons/im";
 import "./body2.css";
 
 function Body2({ display }) {
   if (!display) {
-    return <div>No item selected</div>;
+    return (
+      <div>
+        <div className="body2Bg">
+          <ImFilesEmpty size={250} />
+          <p>nothing opened</p>
+        </div>
+      </div>
+    );
   }
 
   return (

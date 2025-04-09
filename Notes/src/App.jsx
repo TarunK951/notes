@@ -3,7 +3,7 @@ import "./App.css";
 import Body from "./components/Body";
 import Body2 from "./components/Body2";
 import Body3 from "./components/Body3";
-import Header from "./components/header";
+import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 
 function App() {

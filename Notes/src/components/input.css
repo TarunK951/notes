@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
-
 .inputPopUp {
   position: fixed;
   top: 0;
@@ -20,118 +13,127 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+
+  .popUp {
+    background-color: var(--bg-primary);
+    border-radius: 12px;
+    padding: 30px;
+    width: 450px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+
+    .closeBtn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--close-button-background);
+      color: var(--close-button-text);
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .inputs {
+      div {
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: var(--text-primary);
+        transition: color 0.3s ease;
+      }
+
+      input,
+      textarea {
+        width: 90%;
+        padding: 12px;
+        border: 1px solid var(--border-primary);
+        border-radius: 6px;
+        font-size: 15px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease, color 0.3s ease;
+        outline: none;
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+
+        &:focus {
+          border-color: var(--button-active);
+          box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+          background-color: lighten(var(--bg-secondary), 5%);
+        }
+      }
+
+      textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      .submitBtn {
+        background-color: var(--button-primary);
+        color: var(--button-primary-text);
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+    }
+
+    .tag-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      justify-content: center;
+      row-gap: 10px;
+      column-gap: 10px;
+
+      .btn-tag {
+        display: flex;
+        padding: 8px 12px;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        gap: 5px;
+        border: 1px solid var(--border-secondary);
+        border-radius: 6px;
+        background-color: var(--button-secondary);
+        color: var(--button-secondary-text);
+        transition: background-color 0.3s ease, color 0.3s ease,
+          border-color 0.3s ease, transform 0.2s ease;
+
+        &.active {
+          background-color: var(--button-active);
+          color: var(--button-active-text);
+          border-color: var(--button-active);
+        }
+      }
+    }
+  }
 }
 
-.popUp {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 30px;
-  width: 450px;
-  position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+/* Separated Hover Effects */
+.inputPopUp .popUp .closeBtn:hover {
+  background-color: var(--close-button-hover-background);
+  transform: scale(1.1);
 }
 
-.closeBtn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: #f44336;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.inputPopUp .popUp .inputs .submitBtn:hover {
+  background-color: var(--button-primary-hover);
+  transform: scale(1.05);
 }
 
-.closeBtn:hover {
-  background-color: #e53935;
-}
-
-.inputs div {
-  margin-bottom: 20px;
-}
-
-.inputs h2 {
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.inputs input,
-.inputs textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  transition: border-color 0.3s ease;
-  outline: none;
-}
-
-.inputs input:focus,
-.inputs textarea:focus {
-  border-color: #4caf50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-}
-
-.inputs textarea {
-  height: 150px;
-  resize: vertical;
-}
-
-.submitBtn {
-  background-color: #4caf50;
-  color: white;
-  padding: 12px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin: 20px auto 0;
-}
-
-.submitBtn:hover {
-  background-color: #45a049;
-}
-
-.tag-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  justify-content: center;
-  row-gap: 10px;
-  column-gap: 10px;
-}
-
-.btn-tag {
-  display: flex;
-  padding: 8px 12px;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  gap: 5px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background-color: #f9f9f9;
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.btn-tag:hover {
-  background-color: rgba(149, 195, 132, 0.763);
-  color: #000000;
-  border-color: rgba(149, 195, 132, 0.763);
-}
-
-.btn-tag.active {
-  background-color: #4caf50;
-  color: white;
-  border-color: #4caf50;
+.inputPopUp .popUp .tag-buttons .btn-tag:hover {
+  background-color: var(--button-secondary-hover);
+  color: var(--button-secondary-text);
+  border-color: var(--button-secondary-hover);
+  transform: scale(1.03);
 }

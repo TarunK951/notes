@@ -1,10 +1,10 @@
 .display {
-  background-color: #ffffff;
+  background-color: var(--display-background-color);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #2d3748;
+  color: var(--display-text-color);
   line-height: 1.5;
   transition: box-shadow 0.3s ease;
   display: flex;
@@ -26,7 +26,7 @@
 .displayLabel {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #4a5568;
+  color: var(--display-label-color);
   margin-bottom: 5px;
   display: block;
 }
@@ -37,8 +37,9 @@
 .display-mesg-text {
   font-size: 0.95rem;
   padding: 8px 12px;
-  background-color: #f7fafc;
+  background-color: var(--display-content-background);
   border-radius: 6px;
+  color: var(--display-content-text-color);
 }
 
 .display-tags {
@@ -48,14 +49,29 @@
 }
 
 .display-tags span {
-  background-color: #e2e8f0;
+  background-color: var(--display-tag-background);
   padding: 6px 8px;
   border-radius: 4px;
-  color: #4a5568;
+  color: var(--display-tag-text-color);
   font-size: 0.8rem;
 }
 
 .display-content-text,
 .display-mesg-text {
   white-space: pre-wrap;
+}
+
+.body2Bg {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding-top: 40%;
+  opacity: 0.4;
+  color: var(--body2-bg-text);
+}
+
+.body2Bg svg {
+  fill: var(--body2-bg-svg);
 }
