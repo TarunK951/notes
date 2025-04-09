@@ -1,64 +1,64 @@
 .display {
-  background-color: var(--display-background-color);
+  background-color: var(--bg-secondary);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--display-text-color);
+  color: var(--text-primary);
   line-height: 1.5;
   transition: box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-}
 
-.display:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
 
-.display-section {
-  margin-bottom: 15px;
-}
+  .display-section {
+    margin-bottom: 15px;
 
-.display-section:last-child {
-  margin-bottom: 0;
-}
+    &:last-child {
+      margin-bottom: 0;
+    }
 
-.displayLabel {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--display-label-color);
-  margin-bottom: 5px;
-  display: block;
-}
+    .displayLabel {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+      display: block;
+    }
 
-.DisplayContent,
-.display-tags,
-.display-content-text,
-.display-mesg-text {
-  font-size: 0.95rem;
-  padding: 8px 12px;
-  background-color: var(--display-content-background);
-  border-radius: 6px;
-  color: var(--display-content-text-color);
-}
+    .DisplayContent,
+    .display-tags,
+    .display-content-text,
+    .display-mesg-text {
+      font-size: 0.95rem;
+      padding: 8px 12px;
+      background-color: var(--bg-primary);
+      border-radius: 6px;
+      color: var(--text-primary); /* Slightly darker text for content */
+    }
 
-.display-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
+    .display-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
 
-.display-tags span {
-  background-color: var(--display-tag-background);
-  padding: 6px 8px;
-  border-radius: 4px;
-  color: var(--display-tag-text-color);
-  font-size: 0.8rem;
-}
+      span {
+        background-color: var(--button-secondary);
+        padding: 6px 8px;
+        border-radius: 4px;
+        color: var(--button-secondary-text);
+        font-size: 0.8rem;
+      }
+    }
 
-.display-content-text,
-.display-mesg-text {
-  white-space: pre-wrap;
+    .display-content-text,
+    .display-mesg-text {
+      white-space: pre-wrap;
+    }
+  }
 }
 
 .body2Bg {
@@ -69,9 +69,9 @@
   align-items: center;
   padding-top: 40%;
   opacity: 0.4;
-  color: var(--body2-bg-text);
-}
+  color: var(--text-secondary);
 
-.body2Bg svg {
-  fill: var(--body2-bg-svg);
+  svg {
+    fill: var(--text-secondary);
+  }
 }

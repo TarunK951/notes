@@ -4,10 +4,12 @@ import { MdArchive } from "react-icons/md";
 import "./body3.css";
 
 function Body3() {
+  const archiveNote = () => {};
+
   return (
     <div>
       <div className="body3-container">
-        <button className="body3-button">
+        <button className="body3-button" onClick={archiveNote}>
           <MdArchive size={25} />
           <p>Archive</p>
         </button>

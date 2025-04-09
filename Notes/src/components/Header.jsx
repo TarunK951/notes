@@ -4,7 +4,13 @@ import { IoHome } from "react-icons/io5";
 import { PiArchiveDuotone } from "react-icons/pi";
 import "./head.css";
 
-function Header() {
+function Header({ archiveNotes, setNotes, allNotes }) {
+  const archived = () => {
+    setNotes(archiveNotes);
+  };
+  const allnotes = () => {
+    setNotes(allNotes);
+  };
   return (
     <div>
       <div className="header">
@@ -19,13 +25,13 @@ function Header() {
         <div className="head-content">
           <div className="head-main">
             <div>
-              <button className="containers">
+              <button className="containers" onClick={allnotes}>
                 <IoHome size={25} />
                 <p className="allNotes">All Notes</p>
               </button>
             </div>
             <div>
-              <button className="containers">
+              <button className="containers" onClick={archived}>
                 <PiArchiveDuotone size={25} />
                 <p className="allNotes">Archived Notes</p>
               </button>

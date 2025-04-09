@@ -12,6 +12,13 @@
   --bg-darker: #1e1e1e; /* Even darker background */
   --bg-darker-popup: #2a2a2a; /* Darker popup background */
 
+  --bg-secondary: #f0f0f0; /* Light gray or off-white */
+  --bg-primary: #f8f8f8; /* Lighter background */
+  --text-primary: #333; /* Darker text */
+  --text-secondary: #666; /* Medium-dark gray */
+  --button-secondary: #e0e0e0; /* Subtle button background */
+  --button-secondary-text: #444; /* Button text */
+
   /* Border Colors */
   --border-primary: #ccc; /* Main border color */
   --border-secondary: #ddd; /* Secondary borders */
@@ -62,6 +69,12 @@ body.dark-mode {
   --submit-button-background: #33aaff;
   --submit-button-text: black;
   --bg-darker-popup: var(--bg-dark);
+  --bg-secondary: #222;
+  --bg-primary: #333;
+  --text-primary: #eee;
+  --text-secondary: #ccc;
+  --button-secondary: #444;
+  --button-secondary-text: #ddd;
 }
 
 /* Enhanced Light Mode */

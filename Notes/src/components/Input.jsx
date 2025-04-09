@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaTags } from "react-icons/fa6";
 import "./input.css";
 
-function Input({ setOpen, notes, setNotes }) {
+function Input({ setOpen, allNotes, setAllNotes, open }) {
   //
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState([]);
@@ -11,10 +11,10 @@ function Input({ setOpen, notes, setNotes }) {
   const [activeTags, setActiveTags] = useState([]);
   //
   const add = () => {
-    setNotes([
-      ...notes,
+    setAllNotes([
+      ...allNotes,
       {
-        id: notes.length + 1,
+        id: allNotes.length + 1,
         tags: Array.isArray(tags) ? tags : [],
         name: title === "" ? "empty" : title,
         place: place === "" ? "empty" : place,
