@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import Body from "./components/Body";
 import Body2 from "./components/Body2";
-import Body3 from "./components/Body3";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 
@@ -71,15 +70,15 @@ function App() {
             <div className="body2">
               <Body2 display={display} select={select} setSelect={setSelect} />
             </div>
-            <div className="body3">
-              <Body3
+            {/* <div className="body3">
+              {/* <Body3
                 allNotes={allNotes}
                 setAllNotes={setAllNotes}
                 archive={archiveNotes}
                 setArchive={setArchiveNotes}
                 selectedNote={display}
-              />
-            </div>
+              /> 
+            </div> */}
           </div>
         </div>
       </div>
