@@ -3,7 +3,14 @@ import { ImFilesEmpty } from "react-icons/im";
 import "./body2.css";
 import Body3 from "./Body3";
 
-function Body2({ display, DeleteBtn, ArchiveBtn, unArchive, delteArchive }) {
+function Body2({
+  display,
+  DeleteBtn,
+  ArchiveBtn,
+  unArchive,
+  delteArchive,
+  showArchived,
+}) {
   if (!display) {
     return (
       <div>
@@ -50,6 +57,7 @@ function Body2({ display, DeleteBtn, ArchiveBtn, unArchive, delteArchive }) {
           display={display}
           unArchive={unArchive}
           delteArchive={delteArchive}
+          showArchived={showArchived}
         />
       </div>
     </div>

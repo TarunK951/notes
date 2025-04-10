@@ -15,13 +15,14 @@ function App() {
   const [archiveNotes, setArchiveNotes] = useState([]);
 
   const [showArchived, setShowArchived] = useState(false);
+
   // archive function
 
   const ArchiveBtn = (note) => {
     console.log("Archiving note:", note);
 
     setArchiveNotes((prevArchiveNotes) => {
-      const updatedArchive = [...prevArchiveNotes, note];
+      const updatedArchive = [...prevArchiveNotes, { ...note, archived: true }];
       console.log("Archive Notes:", updatedArchive);
       return updatedArchive;
     });
@@ -41,7 +42,7 @@ function App() {
 
   const unArchive = (note) => {
     setAllNotes((prevAllNotes) => {
-      const updateAllNotes = [...prevAllNotes, note];
+      const updateAllNotes = [...prevAllNotes, { ...note, archived: false }];
       return updateAllNotes;
     });
 
@@ -104,6 +105,7 @@ function App() {
                 DeleteBtn={DeleteBtn}
                 unArchive={unArchive}
                 delteArchive={delteArchive}
+                showArchived={showArchived}
               />
             </div>
             {/* <div className="body3">
