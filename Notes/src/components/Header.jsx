@@ -4,12 +4,12 @@ import { IoHome } from "react-icons/io5";
 import { PiArchiveDuotone } from "react-icons/pi";
 import "./head.css";
 
-function Header({ archiveNotes, setNotes, allNotes }) {
+function Header({ setShowArchived }) {
   const archived = () => {
-    setNotes(archiveNotes);
+    setShowArchived(true);
   };
   const allnotes = () => {
-    setNotes(allNotes);
+    setShowArchived(false);
   };
   return (
     <div>

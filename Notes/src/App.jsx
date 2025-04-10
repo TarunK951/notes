@@ -10,35 +10,63 @@ function App() {
 
   const [display, setDisplay] = useState(null);
 
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      tags: [],
-      name: "create something ",
-      place: "hi",
-      mesg: "ok",
-    },
-  ]);
+  const [allNotes, setAllNotes] = useState([]);
 
-  const [allNotes, setAllNotes] = useState([
-    {
-      id: 1,
-      tags: [],
-      name: "all Notes",
-      place: "hi",
-      mesg: "ok",
-    },
-  ]);
+  const [archiveNotes, setArchiveNotes] = useState([]);
 
-  const [archiveNotes, setArchiveNotes] = useState([
-    {
-      id: 1,
-      tags: [],
-      name: "archive notes",
-      place: "hi",
-      mesg: "ok",
-    },
-  ]);
+  const [showArchived, setShowArchived] = useState(false);
+  // archive function
+
+  const ArchiveBtn = (note) => {
+    console.log("Archiving note:", note);
+
+    setArchiveNotes((prevArchiveNotes) => {
+      const updatedArchive = [...prevArchiveNotes, note];
+      console.log("Archive Notes:", updatedArchive);
+      return updatedArchive;
+    });
+
+    setAllNotes((prevAllNotes) => {
+      const updatedAllNotes = prevAllNotes.filter(
+        (item) => item.id !== note.id
+      );
+      console.log("All Notes:", updatedAllNotes);
+      return updatedAllNotes;
+    });
+
+    setDisplay(null);
+  };
+
+  // unArchive function
+
+  const unArchive = (note) => {
+    setAllNotes((prevAllNotes) => {
+      const updateAllNotes = [...prevAllNotes, note];
+      return updateAllNotes;
+    });
+
+    setArchiveNotes((prevArchiveNotes) => {
+      const updateArchive = prevArchiveNotes.filter(
+        (item) => item.id !== note.id
+      );
+      return updateArchive;
+    });
+    setDisplay(null);
+  };
+
+  // delete buttons
+
+  const DeleteBtn = (noteId) => {
+    setAllNotes((prevAllNotes) => prevAllNotes.filter((n) => n.id !== noteId));
+    setDisplay(null);
+  };
+
+  const delteArchive = (noteId) => {
+    setArchiveNotes((prevArchiveNotes) =>
+      prevArchiveNotes.filter((n) => n.id !== noteId)
+    );
+    setDisplay(null);
+  };
 
   return (
     <>
@@ -49,7 +77,8 @@ function App() {
             setAllNotes={setAllNotes}
             archiveNotes={archiveNotes}
             setArchiveNotes={setArchiveNotes}
-            setNotes={setNotes}
+            showArchived={showArchived}
+            setShowArchived={setShowArchived}
           />
         </div>
 
@@ -62,13 +91,20 @@ function App() {
                 setDisplay={setDisplay}
                 select={select}
                 setSelect={setSelect}
-                allNotes={allNotes}
+                allNotes={showArchived ? archiveNotes : allNotes}
                 setAllNotes={setAllNotes}
-                notes={notes}
               />
             </div>
             <div className="body2">
-              <Body2 display={display} select={select} setSelect={setSelect} />
+              <Body2
+                display={display}
+                select={select}
+                setSelect={setSelect}
+                ArchiveBtn={ArchiveBtn}
+                DeleteBtn={DeleteBtn}
+                unArchive={unArchive}
+                delteArchive={delteArchive}
+              />
             </div>
             {/* <div className="body3">
               {/* <Body3

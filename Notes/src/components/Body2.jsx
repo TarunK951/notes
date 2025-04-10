@@ -3,7 +3,7 @@ import { ImFilesEmpty } from "react-icons/im";
 import "./body2.css";
 import Body3 from "./Body3";
 
-function Body2({ display }) {
+function Body2({ display, DeleteBtn, ArchiveBtn, unArchive, delteArchive }) {
   if (!display) {
     return (
       <div>
@@ -44,7 +44,13 @@ function Body2({ display }) {
       </div>
       <hr className="hr"></hr>
       <div className="Body3">
-        <Body3 />
+        <Body3
+          archiveNote={ArchiveBtn}
+          deleteNote={DeleteBtn}
+          display={display}
+          unArchive={unArchive}
+          delteArchive={delteArchive}
+        />
       </div>
     </div>
   );

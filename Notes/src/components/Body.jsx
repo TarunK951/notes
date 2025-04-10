@@ -47,7 +47,7 @@ function Body({
 
         <div className="list-data">
           <div className="data">
-            {notes.map((note) => {
+            {allNotes.map((note) => {
               return (
                 <div
                   className="note"
