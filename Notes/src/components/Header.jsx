@@ -4,12 +4,19 @@ import { PiArchiveDuotone } from "react-icons/pi";
 import "./head.css";
 import TagsContainer from "./TagsContainer";
 
-function Header({ setShowArchived }) {
+function Header({ setShowArchived, setShowBin }) {
   const archived = () => {
     setShowArchived(true);
+    setShowBin(false);
   };
   const allnotes = () => {
     setShowArchived(false);
+    setShowBin(false);
+  };
+
+  const bin = () => {
+    setShowBin(true);
+    console.log("bin");
   };
   return (
     <div>
@@ -34,6 +41,13 @@ function Header({ setShowArchived }) {
               <button className="containers" onClick={archived}>
                 <PiArchiveDuotone size={25} />
                 <p className="allNotes">Archived Notes</p>
+              </button>
+            </div>
+            {/*  */}
+            <div>
+              <button className="containers" onClick={bin}>
+                <PiArchiveDuotone size={25} />
+                <p className="allNotes"> Recycle Bin</p>
               </button>
             </div>
           </div>

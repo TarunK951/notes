@@ -14,7 +14,11 @@ function App() {
 
   const [archiveNotes, setArchiveNotes] = useState([]);
 
+  const [bin, setBin] = useState([]);
+
   const [showArchived, setShowArchived] = useState(false);
+
+  const [showBin, setShowBin] = useState(false);
 
   // archive function
 
@@ -59,6 +63,10 @@ function App() {
 
   const DeleteBtn = (noteId) => {
     setAllNotes((prevAllNotes) => prevAllNotes.filter((n) => n.id !== noteId));
+    setBin((prevBin) => {
+      const binData = [...prevBin, bin];
+      return binData;
+    });
     setDisplay(null);
   };
 
@@ -66,6 +74,10 @@ function App() {
     setArchiveNotes((prevArchiveNotes) =>
       prevArchiveNotes.filter((n) => n.id !== noteId)
     );
+    setBin((prevBin) => {
+      const binData = [...prevBin, bin];
+      return binData;
+    });
     setDisplay(null);
   };
 
@@ -73,14 +85,7 @@ function App() {
     <>
       <div className="App">
         <div className="heading">
-          <Header
-            allNotes={allNotes}
-            setAllNotes={setAllNotes}
-            archiveNotes={archiveNotes}
-            setArchiveNotes={setArchiveNotes}
-            showArchived={showArchived}
-            setShowArchived={setShowArchived}
-          />
+          <Header setShowArchived={setShowArchived} setShowBin={setShowBin} />
         </div>
 
         <div className="main">
@@ -108,15 +113,6 @@ function App() {
                 showArchived={showArchived}
               />
             </div>
-            {/* <div className="body3">
-              {/* <Body3
-                allNotes={allNotes}
-                setAllNotes={setAllNotes}
-                archive={archiveNotes}
-                setArchive={setArchiveNotes}
-                selectedNote={display}
-              /> 
-            </div> */}
           </div>
         </div>
       </div>

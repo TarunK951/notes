@@ -57,7 +57,7 @@ function Body({
                   }}
                 >
                   <p className="note-title">{note.name}</p>
-                  <p className="note-date">{note.date}</p>
+                  <p className="note-date">{note.place}</p>
                 </div>
               );
             })}
