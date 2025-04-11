@@ -1,8 +1,8 @@
 import React from "react";
-import { FaTag } from "react-icons/fa6";
 import { IoHome } from "react-icons/io5";
 import { PiArchiveDuotone } from "react-icons/pi";
 import "./head.css";
+import TagsContainer from "./TagsContainer";
 
 function Header({ setShowArchived }) {
   const archived = () => {
@@ -39,13 +39,14 @@ function Header({ setShowArchived }) {
           </div>
           <hr />
           <div className="tags-container">
-            <p className="tag-title">Tags</p>
+            {/* <p className="tag-title">Tags</p>
             <div className="tags">
               <div className="tag">
                 <FaTag />
                 <p>Work</p>
               </div>
-            </div>
+            </div> */}
+            <TagsContainer />
           </div>
         </div>
       </div>
