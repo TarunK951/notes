@@ -14,7 +14,7 @@ function Input({ setOpen, allNotes, setAllNotes, open }) {
     setAllNotes([
       ...allNotes,
       {
-        id: allNotes.length + 1,
+        id: new Date(),
         tags: Array.isArray(tags) ? tags : [],
         name: title === "" ? "empty" : title,
         place: place === "" ? "empty" : place,
