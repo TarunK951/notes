@@ -8,24 +8,34 @@ function Body3({
   deleteNote,
   display,
   unArchive,
-  delteArchive,
+  permanentDelete,
   showArchived,
+  showBin,
 }) {
   return (
     <div>
       <div className="body3-container">
-        {showArchived == true ? (
+        {showBin ? (
+          // ✅ If in Recycle Bin, show permanent delete
+          <button
+            className="body3-button"
+            onClick={() => permanentDelete(display)}
+          >
+            <AiFillDelete size={25} />
+            <p>Delete Permanently</p>
+          </button>
+        ) : showArchived ? (
           <>
             <button className="body3-button" onClick={() => unArchive(display)}>
-              <AiFillDelete size={25} />
+              <MdArchive size={25} />
               <p>Unarchive</p>
             </button>
             <button
               className="body3-button"
-              onClick={() => delteArchive(display.id)}
+              onClick={() => deleteNote(display)}
             >
               <AiFillDelete size={25} />
-              <p>Unarchive Delete</p>
+              <p>Delete to Bin</p>
             </button>
           </>
         ) : (
@@ -39,10 +49,10 @@ function Body3({
             </button>
             <button
               className="body3-button"
-              onClick={() => deleteNote(display.id)}
+              onClick={() => deleteNote(display)}
             >
               <AiFillDelete size={25} />
-              <p>Delete</p>
+              <p>Delete to Bin</p>
             </button>
           </>
         )}

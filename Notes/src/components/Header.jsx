@@ -1,23 +1,26 @@
 import React from "react";
 import { IoHome } from "react-icons/io5";
 import { PiArchiveDuotone } from "react-icons/pi";
+import { RiDeleteBin6Line } from "react-icons/ri";
 import "./head.css";
 import TagsContainer from "./TagsContainer";
 
 function Header({ setShowArchived, setShowBin }) {
-  const archived = () => {
-    setShowArchived(true);
-    setShowBin(false);
-  };
   const allnotes = () => {
     setShowArchived(false);
     setShowBin(false);
   };
 
+  const archived = () => {
+    setShowArchived(true);
+    setShowBin(false);
+  };
+
   const bin = () => {
     setShowBin(true);
-    console.log("bin");
+    setShowArchived(false);
   };
+
   return (
     <div>
       <div className="header">
@@ -43,23 +46,15 @@ function Header({ setShowArchived, setShowBin }) {
                 <p className="allNotes">Archived Notes</p>
               </button>
             </div>
-            {/*  */}
             <div>
               <button className="containers" onClick={bin}>
-                <PiArchiveDuotone size={25} />
-                <p className="allNotes"> Recycle Bin</p>
+                <RiDeleteBin6Line size={25} />
+                <p className="allNotes">Recycle Bin</p>
               </button>
             </div>
           </div>
           <hr />
           <div className="tags-container">
-            {/* <p className="tag-title">Tags</p>
-            <div className="tags">
-              <div className="tag">
-                <FaTag />
-                <p>Work</p>
-              </div>
-            </div> */}
             <TagsContainer />
           </div>
         </div>

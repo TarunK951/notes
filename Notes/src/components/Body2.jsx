@@ -8,8 +8,9 @@ function Body2({
   DeleteBtn,
   ArchiveBtn,
   unArchive,
-  delteArchive,
+  permanentDelete,
   showArchived,
+  showBin,
 }) {
   if (!display) {
     return (
@@ -56,8 +57,9 @@ function Body2({
           deleteNote={DeleteBtn}
           display={display}
           unArchive={unArchive}
-          delteArchive={delteArchive}
+          permanentDelete={permanentDelete}
           showArchived={showArchived}
+          showBin={showBin}
         />
       </div>
     </div>
